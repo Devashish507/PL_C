@@ -1,0 +1,71 @@
+#include<stdio.h>
+int main()
+{
+	char name[100];
+	int sub1[100], num ,i;
+	int sub2[100],j;
+	int sub3[100];
+	int sub4[100];
+	int sub5[100];
+	int total[100];
+	int result[100];
+	
+	printf("Enter the number of students in class : ");
+	scanf("%d",& num);
+	for(i=0;i<num;i++)
+	{
+		printf("\n Enter the name of student : ");
+		scanf("%s",& name);
+		printf("\n Enter the marks of subject 1 of that student out of 100 : ");
+		scanf("%d",& sub1[i]);
+		printf("\n Enter the marks of subject 2 of that student out of 100 : ");
+		scanf("%d",& sub2[i]);
+		printf("\n Enter the marks of subject 3 of that student out of 100 : ");
+		scanf("%d",& sub3[i]);
+		printf("\n Enter the marks of subject 4 of that student out of 100 : ");
+		scanf("%d",& sub4[i]);
+		printf("\n Enter the marks of subject 5 of that student out of 100 : ");
+		scanf("%d",& sub5[i]);
+	}
+	float per[100];
+	for(j=0;j<num;j++)
+	{
+		total[j]=sub1[j]+sub2[j]+sub3[j]+sub4[j]+sub5[j];
+		per[j]=(total[j])/5;
+		if(sub1[j]>35 && sub2[j]>35 && sub3[j]>35 && sub4[j]>35 && sub5[j]>35)
+		{
+			result[j]=1;
+		}
+		else
+		{
+			result[j]=0	;
+		}	
+	}
+	int pass=0,k,dis=0;
+	float r1;
+	for(k=0;k<num;k++)
+	{
+		if(result[k]==1)
+		{
+			pass++;
+		}
+		if(per[k]>90)
+		{
+			dis++;
+		}
+	}
+	printf("%d",num);
+	printf("\n the total number os students who passed the exam are : ");
+	printf("%d",pass);
+	printf("\n the total number os students who failed the exam are : ");
+	printf("%d",num-pass);
+	printf("\n the total number os students who recieved distinction the exam are : ");
+	printf("%d",dis);
+	printf("\n the result of class is : ");
+		printf("%d %d",pass,num);
+	r1=num/pass;
+	printf("\n%f",r1*100);	
+	return 0;
+		
+	
+}
