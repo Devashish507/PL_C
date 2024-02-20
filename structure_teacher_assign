@@ -1,0 +1,49 @@
+ #include<stdio.h>
+ int main()
+ {
+ 	int n;
+ 	printf("Enter the number of students : ");
+ 	scanf("%d",& n);
+ 	struct dev1
+ 	{
+ 		char name[10];
+ 		int marks[5];
+ 		int total;
+	};
+	struct dev1 s1[n];
+	int i,j,lo;
+	for(j=0;j<n;j++)
+	{
+		printf("Enter the name of the student :");
+		scanf("%s",& s1[j].name);
+		for(i=0;i<5;i++)
+		{
+			printf("Enter marks of subject %d",i+1);
+			printf(" : ");
+			scanf("%d",& s1[j].marks[i]);
+		}
+	}
+	int k,m,pass=0,fail;
+	for(m=0;m<n;m++)
+	{
+		
+		if(s1[m].marks[0]>40 && s1[m].marks[1]>40 && s1[m].marks[2]>40 && s1[m].marks[3]>40 && s1[m].marks[4]>40)
+		{
+			pass++;
+		}
+	}
+	printf("The total number of students in class is : ");
+	printf("%d",n);
+	printf("\n The total number of pass students are : ");
+	printf("%d",pass);
+	printf("\n The total number of fail students are : ");
+	printf("%d",n-pass);
+	lo=pass;
+	lo=lo*100;
+	printf("\n The result of class is : ");
+	printf("%d",lo/n);  
+	printf("%");
+	
+	
+	return 0;
+}
