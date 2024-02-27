@@ -1,0 +1,30 @@
+#include<stdio.h>
+int main()
+{
+    int dev[8]={5,77,89,10,50,100,20,57};
+    int i,large=0,large2=0,a;
+    for(i=0;i<8;i++)
+    {
+       if(dev[i]>dev[i+1])
+       {
+           if(dev[i]>large)
+           {
+               large=dev[i];
+           }
+       }
+    }
+    int j;
+    for(j=0;j<8;j++)
+    {
+        if(dev[j]>dev[j+1] && dev[j]<large)
+        {
+            if(dev[j]>large2)
+            {
+                large2=dev[j];
+            }
+        }
+    }
+    printf("The largest number is %d",large);
+    printf("\n The second largest number in the array is %d",large2);
+    return 0;
+}
